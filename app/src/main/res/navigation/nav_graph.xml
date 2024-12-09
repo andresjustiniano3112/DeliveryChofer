@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <!-- Login Fragment -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.deliverycliente.ui.fragments.LoginFragment"
+        android:label="Inicio de Sesión"
+        tools:layout="@layout/fragment_login">
+        <!-- Acción hacia el registro -->
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_ordersFragment"
+            app:destination="@id/ordersFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Register Fragment -->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.deliverycliente.ui.fragments.RegisterFragment"
+        android:label="Registro"
+        tools:layout="@layout/fragment_register">
+        <!-- Acción hacia el login -->
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+
+    <!-- Orders Fragment -->
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.example.deliverycliente.ui.fragments.OrdersFragment"
+        android:label="Lista de Pedidos">
+
+    </fragment>
+
+    <!-- Main Fragment -->
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.deliverycliente.ui.MainFragment"
+        android:label="Principal"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+
+
+
+
+
+
+
+
+
+</navigation>
